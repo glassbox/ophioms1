@@ -4,7 +4,7 @@
         id        = "com.ophio.ophioforsalesforce"
         version   = "1.0.333">
 
-    <name>Ophio For  Salesforce</name>
+    <name>Ophio For  MS CRM</name>
 
     <description>
         An example for phonegap build docs. 
