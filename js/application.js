@@ -37,6 +37,12 @@ function onDeviceReady() {
   $.mobile.allowCrossDomainPages = true;
   $.mobile.loadingMessageTextVisible = true;
 
+  $('#doTest').on('click', function(event,ui) {
+
+     getGeolocation();
+     event.preventDefault();
+});
+
    init();
 
 }
