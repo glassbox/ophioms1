@@ -731,7 +731,7 @@ function onSuccess(position) {
 
 	       var data = {};
 
-	       data.Address =  '505 - 17 St West Vancouver, BC, Canada V7V 3W3';
+	       data.Address =  '';
 	       data.Longitude =  position.coords.longitude ;
 	       data.Latitude = position.coords.latitude ;
 	       data.Altitude=position.coords.altitude ;
@@ -809,10 +809,10 @@ function reverseGeoCode(data) {
            data.Address= results[1].formatted_address;
 
       } else {
-        console.log('No results found');
+        addLog('No results found');
       }
     } else {
-      console.log('Geocoder failed due to: ' + status);
+      addLog('Geocoder failed due to: ' + status);
     }
 
      createLocation(data);
