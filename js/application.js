@@ -724,7 +724,6 @@ function onSuccess(position) {
                         'Speed: '              + position.coords.speed                 + '<br />' +
                         'Timestamp: '          + (new Date(position.timestamp)).toLocaleString() + '<br />';
 
-            console.log(message);
 
 
 
@@ -755,7 +754,19 @@ function onSuccess(position) {
 			   data.Accuracy  = 0;
 		   }
 
-	       createLocation(data);
+
+			 var message =       'Address: '           + data.Address             + '<br />' +
+			 						'Latitude: '           + position.coords.latitude              + '<br />' +
+			                        'Longitude: '          + position.coords.longitude             + '<br />' +
+			                        'Altitude: '           + position.coords.altitude             + '<br />' +
+			                        'Accuracy: '           + position.coords.accuracy              + '<br />' +
+			                        'Speed: '              + position.coords.speed                 + '<br />' +
+                        'Timestamp: '          + (new Date(position.timestamp)).toLocaleString() + '<br />';
+
+
+
+            addLog(message);
+	       reverseGeoCode(data);
 
 	}
 	       catch(e){
@@ -804,6 +815,32 @@ function reverseGeoCode(data) {
       console.log('Geocoder failed due to: ' + status);
     }
 
-     reverseGeocode(data);
+     createLocation(data);
   });
+}
+
+
+function addLog(message)
+{
+
+   var element = document.getElementById('log');
+    element.innerHTML +=  message;
+    console.log(message);
+
+}
+
+// Clear Log
+function  clearLog()
+{
+   var element = document.getElementById('log');
+    element.innerHTML = '';
+
+}
+
+// Clear Log
+function  newLog(message)
+{
+   clearLog();
+   addLog(message);
+
 }
