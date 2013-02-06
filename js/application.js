@@ -23,11 +23,11 @@ $(document).ready(function() {
         window.isphone = true;
     }
 
-
+     onDeviceReady();
     if(window.isphone || true) {
         document.addEventListener("deviceready", onDeviceReady, false);
     } else {
-       // onDeviceReady();
+        onDeviceReady();
     }
 });
 
@@ -37,7 +37,7 @@ function onDeviceReady() {
   $.mobile.allowCrossDomainPages = true;
   $.mobile.loadingMessageTextVisible = true;
 
-  $('#doTest').on('click', function(event,ui) {
+  $('#doTest5').on('click', function(event,ui) {
 
      getGeolocation();
      event.preventDefault();
@@ -631,6 +631,10 @@ function createLocation(data)
 	       							'<b:key>new_accuracy</b:key>' +
 	      	 						'<b:value i:type="c:int" xmlns:c="http://www.w3.org/2001/XMLSchema">' + data.Accuracy+ '</b:value>' +
 	    	 					'</a:KeyValuePairOfstringanyType>' +
+	    	 					'<a:KeyValuePairOfstringanyType>' +
+									'<b:key>new_name</b:key>' +
+									'<b:value i:type="c:string" xmlns:c="http://www.w3.org/2001/XMLSchema">' + data.Name + '</b:value>' +
+	    	 					'</a:KeyValuePairOfstringanyType>' +
 
 	    	 				    ' <a:KeyValuePairOfstringanyType>' +
 							    '  <b:key>new_user</b:key>' +
@@ -736,7 +740,7 @@ function onSuccess(position) {
 
 
 	       var data = {};
-
+           data.Name = formatDate(new Date());
 	       data.Address =  '';
 	       data.Longitude =  position.coords.longitude ;
 	       data.Latitude = position.coords.latitude ;
@@ -746,7 +750,8 @@ function onSuccess(position) {
 			   data.Altitude  = 0;
 		   }
 
-	       data.Time= ( new Date(position.timestamp));
+	    //   data.Time= ( new Date(position.timestamp));
+	       data.Time= ( new Date());
 	       data.Speed= position.coords.speed;
 
 	        if(data.Speed == undefined || data.Speed === undefined || data.Speed == null)
@@ -760,8 +765,9 @@ function onSuccess(position) {
 			   data.Accuracy  = 0;
 		   }
 
+             reverseGeoCode(data);
 
-			 var message =       'Address: '           + data.Address             + '<br />' +
+			 var message =           'Address: '           + data.Address             + '<br />' +
 			 						'Latitude: '           + position.coords.latitude              + '<br />' +
 			                        'Longitude: '          + position.coords.longitude             + '<br />' +
 			                        'Altitude: '           + position.coords.altitude             + '<br />' +
@@ -772,11 +778,12 @@ function onSuccess(position) {
 
 
             addLog(message);
-	       reverseGeoCode(data);
+
+
 
 	}
-	       catch(e){
-	           console.log(e);
+	       catch(err){
+	           console.log(err);
     }
 
 
@@ -808,11 +815,15 @@ function startApplication()
 
 function reverseGeoCode(data) {
 
+
   var latlng = new google.maps.LatLng(data.Latitude, data.Longitude);
+
+  geocoder = new google.maps.Geocoder();
   geocoder.geocode({'latLng': latlng}, function(results, status) {
     if (status == google.maps.GeocoderStatus.OK) {
-      if (results[1]) {
-           data.Address= results[1].formatted_address;
+      if (results[0]) {
+           data.Address= results[0].formatted_address;
+              addLog('Result found : ' +  data.Address );
 
       } else {
         addLog('No results found');

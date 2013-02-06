@@ -2,6 +2,7 @@
 <head>
        <meta name="viewport" content="width=device-width, initial-scale=1">
 	   <link rel="stylesheet" href="css/jquery.mobile-1.2.0.min.css" />
+	   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 	   <script type="text/javascript" src="js/libs/jquery.js"></script>
 	   <script type="text/javascript" src="js/libs/forcetk.js"></script>
       <script type="text/javascript" src="phonegap.js"></script>
@@ -23,17 +24,22 @@
 	<div data-role="navbar" data-iconpos="top">
 	                    <ul>
 	                        <li>
-	                            <a href="#page1" data-transition="fade" data-theme="" data-icon="arrow-l" class="ui-btn-active ui-state-persist">
+	                            <a href="#page1" data-transition="Fade" data-theme="" data-icon="arrow-l" class="ui-btn-active ui-state-persist">
 	                                Main
 	                            </a>
 	                        </li>
 	                        <li>
-	                            <a href="#page2" data-transition="flip" data-theme="" data-icon="info">
+	                            <a href="#page2" data-transition="Fade" data-theme="" data-icon="info">
 	                                Log
 	                            </a>
 	                        </li>
 	                        <li>
-	                            <a href="#page3" data-transition="turn" data-theme="" data-icon="grid">
+	                            <a href="#page3" data-transition="Fade" data-theme="" data-icon="check">
+	                                Test
+	                            </a>
+	                        </li>
+	                        <li>
+	                            <a href="#page4" data-transition="Fade" data-theme="" data-icon="grid">
 	                                Settings
 	                            </a>
 	                        </li>
@@ -60,11 +66,11 @@
 		                            </option>
 		                        </select>
 		                    </fieldset>
-                </div>
+       </div>
 
 
 
-   		<a href="#" id="doTest" data-role="button" data-icon="delete" data-theme="b">Get Geolocation!</a>
+
 
 
 	</div><!-- /content -->
@@ -84,20 +90,26 @@
 	<div data-role="navbar" data-iconpos="top">
 	                    <ul>
 	                        <li>
-	                            <a href="#page1" data-transition="fade" data-theme="" data-icon="arrow-l" >
+	                            <a href="#page1" data-transition="Fade" data-theme="" data-icon="arrow-l" >
 	                                Main
 	                            </a>
 	                        </li>
 	                        <li>
-	                            <a href="#page2" data-transition="flip" data-theme="" data-icon="info" class="ui-btn-active ui-state-persist">
+	                            <a href="#page2" data-transition="Fade" data-theme="" data-icon="info" class="ui-btn-active ui-state-persist">
 	                                Log
 	                            </a>
 	                        </li>
 	                        <li>
-	                            <a href="#page3" data-transition="turn" data-theme="" data-icon="grid">
+	                            <a href="#page3" data-transition="Fade" data-theme="" data-icon="check">
+	                                Test
+	                            </a>
+	                        </li>
+	                        <li>
+	                            <a href="#page4" data-transition="Fade" data-theme="" data-icon="grid">
 	                                Settings
 	                            </a>
 	                        </li>
+
 	                    </ul>
 	                </div>
 
@@ -133,23 +145,34 @@
 	<div data-role="navbar" data-iconpos="top">
 	                    <ul>
 	                        <li>
-	                            <a href="#page1" data-transition="fade" data-theme="" data-icon="arrow-l" >
+	                            <a href="#page1" data-transition="Fade" data-theme="" data-icon="arrow-l" >
 	                                Main
 	                            </a>
 	                        </li>
 	                        <li>
-	                            <a href="#page2" data-transition="flip" data-theme="" data-icon="info">
+	                            <a href="#page2" data-transition="Fade" data-theme="" data-icon="info">
 	                                Log
 	                            </a>
 	                        </li>
 	                        <li>
-	                            <a href="#page3" data-transition="turn" data-theme="" data-icon="grid" class="ui-btn-active ui-state-persist">
+	                            <a href="#page3" data-transition="Fade" data-theme="" data-icon="check" class="ui-btn-active ui-state-persist">
+	                                Test
+	                            </a>
+	                        </li>
+	                        <li>
+	                            <a href="#page4" data-transition="Fade" data-theme="" data-icon="grid">
 	                                Settings
 	                            </a>
 	                        </li>
 	                    </ul>
     </div>
 
+      <a href="#" id="doTest1" data-role="button" data-icon="delete" data-theme="b">Outgoing Call!</a>
+      <a href="#" id="doTest2" data-role="button" data-icon="delete" data-theme="b">Incoming Call</a>
+      <a href="#" id="doTest3" data-role="button" data-icon="delete" data-theme="b">Missed Call!</a>
+      <a href="#" id="doTest4" data-role="button" data-icon="delete" data-theme="b">Declined Call<!</a>
+      <a href="#" id="doTest5" data-role="button" data-icon="delete" data-theme="b">Get Geolocation!</a>
+      <a href="#" id="doTest6" data-role="button" data-icon="delete" data-theme="b"> Route</a>
 
 	<div data-role="content" data-theme="a">
 	    <div  data-theme="b">
@@ -164,6 +187,92 @@
 </div><!-- /page3 -->
 
 
+  <div data-role="page" id="page4">
+
+  	<div data-role="header">
+  		<h1>Ophio MS Dynamics</h1>
+  	</div><!-- /header -->
+
+  	<div data-role="navbar" data-iconpos="top">
+  	                    <ul>
+  	                        <li>
+  	                            <a href="#page1" data-transition="Fade" data-theme="" data-icon="arrow-l" >
+  	                                Main
+  	                            </a>
+  	                        </li>
+  	                        <li>
+  	                            <a href="#page2" data-transition="Fade" data-theme="" data-icon="info">
+  	                                Log
+  	                            </a>
+  	                        </li>
+  	                        <li>
+  	                            <a href="#page3" data-transition="Fade" data-theme="" data-icon="check">
+  	                                Test
+  	                            </a>
+  	                        </li>
+  	                        <li>
+  	                            <a href="#page4" data-transition="Fade" data-theme="" data-icon="grid" class="ui-btn-active ui-state-persist">
+  	                                Settings
+  	                            </a>
+  	                        </li>
+
+  	                    </ul>
+      </div>
+
+
+  	<div data-role="content" data-theme="a">
+  	    <div  data-theme="b">
+  	    <h3> Welcome to Ophio  Mobile </h3>
+  	    </div>
+
+
+  	    <form>
+		User: <input type="text" name="username"><br>
+		Password: <input type="password" name="pwd">
+		</form>
+
+
+  	    <div data-role="fieldcontain">
+		                    <fieldset data-role="controlgroup">
+		                        <label for="toggleswitch1">
+		                            Calls Tracking
+		                        </label>
+		                        <select name="toggleswitch1" id="toggleswitch1" data-theme="b" data-role="slider">
+		                            <option value="off">
+		                                Off
+		                            </option>
+		                            <option value="on">
+		                                On
+		                            </option>
+		                        </select>
+		                    </fieldset>
+       </div>
+
+       <div data-role="fieldcontain">
+	   		                    <fieldset data-role="controlgroup">
+	   		                        <label for="toggleswitch1">
+	   		                           GeoLocation Tracking
+	   		                        </label>
+	   		                        <select name="toggleswitch1" id="toggleswitch1" data-theme="b" data-role="slider">
+	   		                            <option value="off">
+	   		                                Off
+	   		                            </option>
+	   		                            <option value="on">
+	   		                                On
+	   		                            </option>
+	   		                        </select>
+	   		                    </fieldset>
+	          </div>
+
+
+
+  	</div><!-- /content -->
+
+  	<div data-role="footer">
+  		<h4>Ophio Software, Inc.</h4>
+  	</div><!-- /footer -->
+
+</div><!-- /page4 -->
 </body>
 
 
