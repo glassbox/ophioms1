@@ -23,7 +23,7 @@ $(document).ready(function() {
         window.isphone = true;
     }
 
-     onDeviceReady();
+  //   onDeviceReady();
     if(window.isphone || true) {
         document.addEventListener("deviceready", onDeviceReady, false);
     } else {
